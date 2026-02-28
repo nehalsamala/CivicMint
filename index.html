@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CivicMint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Welcome to CivicMint</h1>
+
+  <!-- AUTH SECTION -->
+  <div class="auth-box">
+    <h3>Authentication</h3>
+
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+
+    <p id="authStatus">Not logged in</p>
+  </div>
+
+  <hr>
+
+  <!-- CREATE POST -->
+  <h3>Create a Post</h3>
+
+  <input type="text" id="title" placeholder="Issue Title" /><br><br>
+  <textarea id="description" placeholder="Describe the issue"></textarea><br><br>
+  <input type="file" id="imageInput" accept="image/*" /><br><br>
+
+  <button onclick="handleUpload()">Submit Post</button>
+
+  <h3>Preview</h3>
+  <img id="preview" width="250" />
+
+  <hr>
+
+  <!-- POSTS FEED -->
+  <h3>Community Reports</h3>
+  <div id="postsContainer"></div>
+
+  <!-- Firebase (Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBXIYNbN4S9izJ7jjCsKoyRxe7NYBavIj8",
+      authDomain: "civicmint-aefb4.firebaseapp.com",
+      projectId: "civicmint-aefb4",
+      storageBucket: "civicmint-aefb4.firebasestorage.app",
+      messagingSenderId: "279468231142",
+      appId: "1:279468231142:web:20fd49b0c0109c6ed3ae27"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- YOUR APP LOGIC -->
+  <script src="app.js"></script>
+
+</body>
+</html>
